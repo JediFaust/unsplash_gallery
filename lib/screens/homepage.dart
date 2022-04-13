@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unsplash_gallery/models/photo.dart';
+import 'package:unsplash_gallery/screens/search_view.dart';
 import 'package:unsplash_gallery/utils/constants.dart';
 
 import '../services/photo_service.dart';
@@ -102,6 +103,16 @@ class _HomePageState extends State<HomePage> {
                 }
               }),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          showDialog(
+              context: (context),
+              builder: (context) {
+                return SearchPhotosView();
+              });
+        },
+        child: const Icon(Icons.search),
       ),
     );
   }
